@@ -11,14 +11,19 @@ if ( site_url() == "http://localhost/theme" ){
 }else{
 	define( "VERSION", wp_get_theme()->get( "version" ));
 }
+//============================================================
 
-//==================================
-
-define( 'RIMK_DIR', trailingslashit( get_template_directory() )) ;
-define( 'RIMK_LINK', trailingslashit( get_template_directory_uri() ) );
-
-
-function rimkony_setup() {
+define( 'RIMKTHEME_DIR', trailingslashit( get_template_directory() )) ;
+define( 'RIMKTHEME_LINK', trailingslashit( get_template_directory_uri() ) );
+if ( ! function_exists( 'rimktheme_setup' ) ) :
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support for post thumbnails.
+ */
+function rimktheme_setup() {
 
 	load_theme_textdomain( 'rimkony', get_template_directory() . '/languages' );
 
@@ -81,7 +86,8 @@ function rimkony_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'rimkony_setup' );
+endif; // rimktheme_setup
+add_action( 'after_setup_theme', 'rimktheme_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -90,10 +96,10 @@ add_action( 'after_setup_theme', 'rimkony_setup' );
  *
  * @global int $content_width
  */
-function rimkony_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'rimkony_content_width', 640 );
+function rimktheme_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'rimktheme_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'rimkony_content_width', 0 );
+add_action( 'after_setup_theme', 'rimktheme_content_width', 0 );
 
 /**
  * Register widget area.
@@ -121,29 +127,29 @@ add_action( 'widgets_init', 'rimkony_widgets_init' );
 function rimkony_scripts() {
 	
 	// Rimk theme stylesheet
-	wp_enqueue_style( 'font-awesome', RIMK_LINK . 'assets/css/all.min.css' );
-	wp_enqueue_style( 'flaticon', RIMK_LINK . 'assets/font/flaticon.css' );
-	wp_enqueue_style( 'bootstrap', RIMK_LINK . 'assets/css/bootstrap.min.css' );
-	wp_enqueue_style( 'menu', RIMK_LINK . 'assets/css/menu.css' );
-	wp_enqueue_style( 'venobox', RIMK_LINK . 'assets/css/venobox.css' );
-	wp_enqueue_style( 'magnific-popup', RIMK_LINK . 'assets/css/magnific-popup.css' );
-	wp_enqueue_style( 'swiper-slider', RIMK_LINK . 'assets/css/swiper-bundle.min.css' );
-	wp_enqueue_style( 'scroll-animation', RIMK_LINK . 'assets/css/animate.css' );
-	wp_enqueue_style( 'style', RIMK_LINK . 'assets/css/style.css' );
-	wp_enqueue_style( 'responsive', RIMK_LINK . 'assets/css/responsive.css' );
+	wp_enqueue_style( 'font-awesome', RIMKTHEME_LINK . 'assets/css/all.min.css' );
+	wp_enqueue_style( 'flaticon', RIMKTHEME_LINK . 'assets/font/flaticon.css' );
+	wp_enqueue_style( 'bootstrap', RIMKTHEME_LINK . 'assets/css/bootstrap.min.css' );
+	wp_enqueue_style( 'menu', RIMKTHEME_LINK . 'assets/css/menu.css' );
+	wp_enqueue_style( 'venobox', RIMKTHEME_LINK . 'assets/css/venobox.css' );
+	wp_enqueue_style( 'magnific-popup', RIMKTHEME_LINK . 'assets/css/magnific-popup.css' );
+	wp_enqueue_style( 'swiper-slider', RIMKTHEME_LINK . 'assets/css/swiper-bundle.min.css' );
+	wp_enqueue_style( 'scroll-animation', RIMKTHEME_LINK . 'assets/css/animate.css' );
+	wp_enqueue_style( 'style', RIMKTHEME_LINK . 'assets/css/style.css' );
+	wp_enqueue_style( 'responsive', RIMKTHEME_LINK . 'assets/css/responsive.css' );
 
 	// Rimk theme scripts
-	wp_enqueue_script( 'bootstrap', RIMK_LINK . 'assets/js/bootstrap.bundle.min.js', array('jquery'), '5.0.0' ,true);   
-	wp_enqueue_script( 'menu', RIMK_LINK . 'assets/plugins/menu.min.js', array('jquery'), VERSION ,true);   
-	wp_enqueue_script( 'venobox', RIMK_LINK . 'assets/plugins/venobox.min.js', array('jquery'), '1.8.6' ,true);   
-	wp_enqueue_script( 'megnific-popup', RIMK_LINK . 'assets/plugins/jquery.magnific-popup.min.js', array('jquery'), '1.1.0' ,true);   
-	wp_enqueue_script( 'mixitup-popup', RIMK_LINK . 'assets/plugins/mixitup.min.js', array('jquery'), '3.3.1' ,true);   
-	wp_enqueue_script( 'swiper-slider', RIMK_LINK . 'assets/plugins/swiper-bundle.min.js', array('jquery'), '6.1.2' ,true);  
-	wp_enqueue_script( 'counterup-waypoint', RIMK_LINK . 'assets/plugins/waypoint.js', array('jquery'), '4.0.1' ,true);   
-	wp_enqueue_script( 'counterup', RIMK_LINK . 'assets/plugins/jquery.counterup.min.js', array('jquery'), '1.0' ,true);   
-	wp_enqueue_script( 'scroll-animation', RIMK_LINK . 'assets/plugins/wow.min.js', array('jquery'), VERSION ,true);   
-	wp_enqueue_script( 'scroll-animation', RIMK_LINK . 'assets/plugins/wow.min.js', array('jquery'), '1.1.3' ,true);   
-	wp_enqueue_script( 'script', RIMK_LINK . 'assets/js/script.js', array(), VERSION ,true);   
+	wp_enqueue_script( 'bootstrap', RIMKTHEME_LINK . 'assets/js/bootstrap.bundle.min.js', array('jquery'), '5.0.0' ,true);   
+	wp_enqueue_script( 'menu', RIMKTHEME_LINK . 'assets/plugins/menu.min.js', array('jquery'), VERSION ,true);   
+	wp_enqueue_script( 'venobox', RIMKTHEME_LINK . 'assets/plugins/venobox.min.js', array('jquery'), '1.8.6' ,true);   
+	wp_enqueue_script( 'megnific-popup', RIMKTHEME_LINK . 'assets/plugins/jquery.magnific-popup.min.js', array('jquery'), '1.1.0' ,true);   
+	wp_enqueue_script( 'mixitup-popup', RIMKTHEME_LINK . 'assets/plugins/mixitup.min.js', array('jquery'), '3.3.1' ,true);   
+	wp_enqueue_script( 'swiper-slider', RIMKTHEME_LINK . 'assets/plugins/swiper-bundle.min.js', array('jquery'), '6.1.2' ,true);  
+	wp_enqueue_script( 'counterup-waypoint', RIMKTHEME_LINK . 'assets/plugins/waypoint.js', array('jquery'), '4.0.1' ,true);   
+	wp_enqueue_script( 'counterup', RIMKTHEME_LINK . 'assets/plugins/jquery.counterup.min.js', array('jquery'), '1.0' ,true);   
+	wp_enqueue_script( 'scroll-animation', RIMKTHEME_LINK . 'assets/plugins/wow.min.js', array('jquery'), VERSION ,true);   
+	wp_enqueue_script( 'scroll-animation', RIMKTHEME_LINK . 'assets/plugins/wow.min.js', array('jquery'), '1.1.3' ,true);   
+	wp_enqueue_script( 'script', RIMKTHEME_LINK . 'assets/js/script.js', array(), VERSION ,true);   
 
 
 	// by default scripts

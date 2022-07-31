@@ -10,7 +10,7 @@
 ?>
 
 <!-- start footer area -->
-<footer data-img="<?php echo RIMK_LINK  ?>assets/images/footer-bg.jpg">
+<footer data-img="<?php echo RIMKTHEME_LINK  ?>assets/images/footer-bg.jpg">
     <!-- start footer-top area -->
     <section class="footer-top">
         <div class="container">
