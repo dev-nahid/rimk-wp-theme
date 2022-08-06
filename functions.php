@@ -18,10 +18,7 @@ define( 'RIMKTHEME_LINK', trailingslashit( get_template_directory_uri() ) );
 if ( ! function_exists( 'rimktheme_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
+ * 
  */
 function rimktheme_setup() {
 
@@ -74,7 +71,6 @@ function rimktheme_setup() {
 	/**
 	 * Add support for core custom logo.
 	 *
-	 * @link https://codex.wordpress.org/Theme_Logo
 	 */
 	add_theme_support(
 		'custom-logo',
@@ -126,7 +122,8 @@ add_action( 'widgets_init', 'rimkony_widgets_init' );
  */
 function rimkony_scripts() {
 	
-	// Rimk theme stylesheet
+	// Rimk theme styles
+	wp_enqueue_style( 'josefin-font', '//fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap' );
 	wp_enqueue_style( 'font-awesome', RIMKTHEME_LINK . 'assets/css/all.min.css' );
 	wp_enqueue_style( 'flaticon', RIMKTHEME_LINK . 'assets/font/flaticon.css' );
 	wp_enqueue_style( 'bootstrap', RIMKTHEME_LINK . 'assets/css/bootstrap.min.css' );
@@ -152,11 +149,9 @@ function rimkony_scripts() {
 	wp_enqueue_script( 'script', RIMKTHEME_LINK . 'assets/js/script.js', array(), VERSION ,true);   
 
 
-	// by default scripts
-	wp_enqueue_style( 'rimkony-style', get_stylesheet_uri(), array(), VERSION );
-	wp_style_add_data( 'rimkony-style', 'rtl', 'replace' );
-
-	wp_enqueue_script( 'rimkony-navigation', get_template_directory_uri() . '/js/navigation.js', array(), VERSION, true );
+	// Default theme style with rtl
+	wp_enqueue_style( 'rimk-default', get_stylesheet_uri(), array(), VERSION );
+	wp_style_add_data( 'rimk-rtl', 'rtl', 'replace' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -164,30 +159,9 @@ function rimkony_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'rimkony_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
+// Customizer additions.
+require RIMKTHEME_DIR . 'inc/customizer.php';
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
+// Custom template tags for this theme.
+require RIMKTHEME_DIR . 'inc/template-tags.php';
 

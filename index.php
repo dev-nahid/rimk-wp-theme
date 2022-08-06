@@ -10,8 +10,13 @@
 get_header();
 
 ?>
-<?php get_template_part( 'components/banner-area' ); ?>
-<?php get_template_part( 'components/blog-area' ); ?>
+<?php get_template_part( 'components/header/breadcrumb' ); ?>
+
+<main id="primary" class="site-main post">
+
+    <?php get_template_part( 'components/main/blog' ); ?>
+
+</main><!-- #main -->
 
 <?php
 //get_sidebar();

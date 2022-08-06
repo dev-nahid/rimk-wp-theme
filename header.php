@@ -14,12 +14,6 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- favicon -->
-    <link rel="shortcut icon" href="<?php echo RIMKTHEME_LINK  ?>assets/images/favicon.png" type="image/x-icon"/>
-
-    <!-- josefin sans font -->
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
-
 
 <?php wp_head(); ?>
 </head>
@@ -48,11 +42,7 @@
     <header>
     
     <?php 
-    if ( is_page( ) ) {
-        get_template_part( 'components/header/page-menubar' );
-    }else {
-        get_template_part( 'components/header/post-menubar' );
-    }
+    get_template_part( 'components/header/menubar' );
     ?>
 
     </header>
