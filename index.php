@@ -9,8 +9,7 @@
 
 get_header();
 
-?>
-<?php get_template_part( 'components/header/breadcrumb' ); ?>
+get_template_part( 'components/header/breadcrumb' ); ?>
 
 <main id="primary" class="site-main post">
 

@@ -160,8 +160,24 @@ function rimkony_scripts() {
 add_action( 'wp_enqueue_scripts', 'rimkony_scripts' );
 
 // Customizer additions.
-require RIMKTHEME_DIR . 'inc/customizer.php';
+//require RIMKTHEME_DIR . 'inc/customizer.php';
 
 // Custom template tags for this theme.
 require RIMKTHEME_DIR . 'inc/template-tags.php';
+
+function rimkony_customizer($wp_customize) {
+	$wp_customize->add_section('section-name', array(
+		'title' => 'Section Title',
+		'priority' => 220,
+	));
+	$wp_customize->add_setting('setting-label-one', array(
+		'default' => 'This is default value from setting'
+	));
+	$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'control-name', array(
+		'label' => 'control-label',
+		'section' => 'section-name',
+		'settings' => 'setting-label-one'
+	)) );
+}
+add_action('customize_register', 'rimkony_customizer');
 

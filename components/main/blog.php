@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
                 <div class="section-title wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1s">
-                    <h2>our latest news</h2>
+                    <h2><?php echo get_theme_mod('setting-label-one'); ?></h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua saidul</p>
                 </div>
             </div>
