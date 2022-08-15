@@ -69,7 +69,7 @@ get_template_part( 'components/header/breadcrumb' ); ?>
                         <!-- single comment -->
                         <li class="single-comment">
                             <a href="#!">
-                                <img src="assets/images/blog/reply.jpg" alt="Reply Image">
+                                <img src='<?php echo RIMKTHEME_LINK . "assets/images/blog/reply.jpg" ?>' alt="Reply Image">
                             </a>
                             <div class="comment-body">
                                 <div class="comment-author d-flex align-items-center justify-content-between">
@@ -89,7 +89,7 @@ get_template_part( 'components/header/breadcrumb' ); ?>
                                 <!-- reply comment -->
                                 <li class="single-comment">
                                     <a href="#!">
-                                        <img src="assets/images/blog/reply2.jpg" alt="Reply Image">
+                                        <img src='<?php echo RIMKTHEME_LINK . "assets/images/blog/reply2.jpg" ?>' alt="Reply Image">
                                     </a>
                                     <div class="comment-body">
                                         <div class="comment-author d-flex align-items-center justify-content-between">
@@ -111,7 +111,7 @@ get_template_part( 'components/header/breadcrumb' ); ?>
                         <!-- single comment -->
                         <li class="single-comment">
                             <a href="#!">
-                                <img src="assets/images/blog/reply3.jpg" alt="Reply Image">
+                                <img src='<?php echo RIMKTHEME_LINK . "assets/images/blog/reply3.jpg" ?>' alt="Reply Image">
                             </a>
                             <div class="comment-body">
                                 <div class="comment-author d-flex align-items-center justify-content-between">

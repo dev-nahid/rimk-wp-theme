@@ -104,7 +104,7 @@ a:focus {
 button:focus {
   outline: 0;
 }
-
+article,
 h1,
 h2,
 h3,
@@ -733,10 +733,14 @@ p {
 ==================================================*/
 .menubar {
   position: absolute;
-  top: 30px;
+  top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
+}
+/* If adminbar available */
+.logged-menubar {
+  margin-top: 30px;
 }
 .menubar .menu-bg {
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.19);
@@ -2197,22 +2201,22 @@ p {
 
 /*  11.2: blog sidebar */
 
-.blog-detail .blog-sidebar .single-item {
+.blog-sidebar .single-item {
   padding: 22px;
   border-radius: 8px;
   background: #f8f9ff;
   margin-bottom: 30px;
 }
-.blog-detail .blog-sidebar .single-item .search-area {
+.blog-sidebar .single-item .search-area {
   position: relative;
 }
-.blog-detail .blog-sidebar .single-item label {
+.blog-sidebar .single-item label {
   width: 100%;
   position: relative;
   margin-bottom: 0;
   overflow: hidden;
 }
-.blog-detail .blog-sidebar .single-item input {
+.blog-sidebar .single-item input {
   border: 0;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -2221,13 +2225,13 @@ p {
   width: 100%;
   outline: none;
 }
-.blog-detail .blog-sidebar .single-item input::placeholder {
+.blog-sidebar .single-item input::placeholder {
   color: var(--grey);
   text-transform: capitalize;
   font-weight: 400;
   font-size: 18px;
 }
-.blog-detail .blog-sidebar .single-item .search-area button {
+.blog-sidebar .single-item .search-area button {
   position: absolute;
   right: 0;
   padding: 0 20px;
@@ -2246,18 +2250,18 @@ p {
   -o-transition: all linear 0.3s;
 }
 
-.blog-detail .blog-sidebar .single-item .search-area button:hover {
+.blog-sidebar .single-item .search-area button:hover {
   background: var(--deep-blue);
 }
 
-.blog-detail .blog-sidebar .item-title h4 {
+.blog-sidebar .item-title h4 {
   font-weight: 700;
   text-transform: capitalize;
   margin-bottom: 20px;
   width: max-content;
   position: relative;
 }
-.blog-detail .blog-sidebar .item-title h4:after {
+.blog-sidebar .item-title h4:after {
   content: "";
   width: 30px;
   height: 1px;
@@ -2267,33 +2271,33 @@ p {
   transform: translateY(-50%);
   right: -50px;
 }
-.blog-detail .blog-sidebar .recent-post {
+.blog-sidebar .recent-post {
   padding: 25px 30px;
 }
-.blog-detail .blog-sidebar .recent-post ul li:not(:last-child) {
+.blog-sidebar .recent-post ul li:not(:last-child) {
   margin-bottom: 20px;
 }
-.blog-detail .blog-sidebar .recent-post ul li {
+.blog-sidebar .recent-post ul li {
   display: flex;
   align-items: center;
 }
-.blog-detail .blog-sidebar .recent-post ul li img {
+.blog-sidebar .recent-post ul li img {
   width: 70px;
   height: 70px;
   border-radius: 5px;
   margin-right: 20px;
 }
-.blog-detail .blog-sidebar .recent-post ul li .media-body {
+.blog-sidebar .recent-post ul li .media-body {
   flex: 1;
 }
-.blog-detail .blog-sidebar .recent-post ul li span {
+.blog-sidebar .recent-post ul li span {
   display: block;
   text-transform: uppercase;
   font-size: 12px;
   line-height: 24px;
   color: var(--grey);
 }
-.blog-detail .blog-sidebar .recent-post ul li a {
+.blog-sidebar .recent-post ul li a {
   display: inline-block;
   font-weight: 500;
   font-size: 15px;
@@ -2301,7 +2305,7 @@ p {
   color: var(--deep-blue);
 }
 
-.blog-detail .blog-sidebar .category ul li a {
+.blog-sidebar .category ul li a {
   display: inline-block;
   font-weight: 600;
   font-size: 16px;
@@ -2309,17 +2313,17 @@ p {
   color: var(--deep-blue);
   text-transform: capitalize;
 }
-.blog-detail .blog-sidebar .category ul li:not(:last-child) {
+.blog-sidebar .category ul li:not(:last-child) {
   padding-bottom: 20px;
 }
-.blog-detail .blog-sidebar .category ul li a i {
+.blog-sidebar .category ul li a i {
   margin-right: 10px;
 }
-.blog-detail .blog-sidebar .recent-post ul li a:hover,
-.blog-detail .blog-sidebar .category ul li a:hover {
+.blog-sidebar .recent-post ul li a:hover,
+.blog-sidebar .category ul li a:hover {
   color: var(--orange);
 }
-.blog-detail .blog-sidebar .tags .tag-items a {
+.blog-sidebar .tags .tag-items a {
   display: inline-block;
   font-size: 14px;
   line-height: 32px;
@@ -2340,7 +2344,7 @@ p {
   background: var(--white);
 }
 
-.blog-detail .blog-sidebar .tags .tag-items a:hover {
+.blog-sidebar .tags .tag-items a:hover {
   color: var(--white);
   background: var(--orange);
 }
@@ -2611,4 +2615,21 @@ p {
 .team-page.team-detail .table tr .pos,
 .team-page.team-detail .table tr .com {
   min-width: 200px;
+}
+
+.content-area {
+  float: left;
+  width: 68.3%;
+  padding-right: 30px;
+  position: relative;
+}
+
+.widget-area {
+  float: left;
+  width: 31.7%;
+  position: relative;
+}
+
+.content-list article {
+  margin-bottom: 2rem;
 }

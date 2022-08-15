@@ -6,16 +6,20 @@
  *
  * @package Rimk
  */
-
 get_header();
-?>
 
-	<main id="primary" class="site-main">
+get_template_part( 'components/header/breadcrumb' ); ?>
 
-
-
-	</main><!-- #main -->
+<main id="primary" class="site-main">
+    <section class="blog-detail p-120">
+        <div class="container">
+            <div class="row">
+                <?php echo "Archive Page"; ?>
+                <?php get_sidebar( ); ?>
+            </div>
+        </div>
+    </section>
+</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

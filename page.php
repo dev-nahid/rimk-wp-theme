@@ -13,24 +13,19 @@
  */
 
 get_header();
-?>
-<?php get_template_part( 'components/banner-area' ); ?>
+
+get_template_part( 'components/header/breadcrumb' ); ?>
 
 <main id="primary" class="site-main">
-    <div class="container">
-<?php 
-    if ( have_posts() ) : 
-        while ( have_posts() ) : the_post(); 
-            the_title( '<h2>', '</h2>' ); 
-            the_post_thumbnail(); 
-            the_excerpt();
-        endwhile; 
-    else: 
-        _e( 'Sorry, no posts matched your criteria.', 'textdomain' ); 
-    endif; 
-?>
-    </div>
+    <section class="blog-detail p-120">
+        <div class="container">
+            <div class="row">
+                <?php get_template_part( 'components/main/entry' ); ?>
+                <?php get_sidebar( ); ?>
+            </div>
+        </div>
+    </section>
 </main><!-- #main -->
-<?php
 
+<?php
 get_footer();

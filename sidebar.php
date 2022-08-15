@@ -13,7 +13,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <!-- start blog sidebar area -->
-<div class="col-lg-4 order-0 order-lg-1">
+<div class="col-lg-4 order-1 order-lg-1">
 	<aside class="blog-sidebar">
 		<!-- single item -->
 		<div class="single-item search-blog wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1s">
@@ -30,7 +30,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			<ul>
 				<li>
 					<a href="#!">
-						<img src="assets/images/blog/recent1.jpg" alt="Recent Post">
+						<img src='<?php echo RIMKTHEME_LINK . "assets/images/blog/recent1.jpg" ?>' alt="Recent Post">
 					</a>
 					<div class="media-body">
 						<span>jan 06 2020</span>
@@ -39,7 +39,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 				</li>
 				<li>
 					<a href="#!">
-						<img src="assets/images/blog/recent2.jpg" alt="Recent Post">
+						<img src='<?php echo RIMKTHEME_LINK . "assets/images/blog/recent2.jpg" ?>' alt="Recent Post">
 					</a>
 					<div class="media-body">
 						<span>jun 07 2020</span>
@@ -48,7 +48,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 				</li>
 				<li>
 					<a href="#!">
-						<img src="assets/images/blog/recent3.jpg" alt="Recent Post">
+						<img src='<?php echo RIMKTHEME_LINK . "assets/images/blog/recent3.jpg" ?>' alt="Recent Post">
 					</a>
 					<div class="media-body">
 						<span>aug 16 2020</span>
@@ -57,7 +57,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 				</li>
 				<li>
 					<a href="#!">
-						<img src="assets/images/blog/recent4.jpg" alt="Recent Post">
+						<img src='<?php echo RIMKTHEME_LINK . "assets/images/blog/recent4.jpg" ?>' alt="Recent Post">
 					</a>
 					<div class="media-body">
 						<span>sep 10 2020</span>
