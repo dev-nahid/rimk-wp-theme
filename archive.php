@@ -14,7 +14,7 @@ get_template_part( 'components/header/breadcrumb' ); ?>
     <section class="blog-detail p-120">
         <div class="container">
             <div class="row">
-                <?php echo "Archive Page"; ?>
+                <?php get_template_part( 'components/main/entry' ); ?>
                 <?php get_sidebar( ); ?>
             </div>
         </div>

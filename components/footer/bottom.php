@@ -9,12 +9,13 @@
                                 <p>Copyright &copy; 2021, Themes-Land All Rights Reserved.</p>
                             </div>
                             <div class="col-lg-6">
-                                <ul class="d-flex justify-content-end">
-                                    <li><a href="about.html">about us</a></li>
-                                    <li><a href="service.html">service</a></li>
-                                    <li><a href="#!">privacy policy</a></li>
-                                    <li><a href="contact.html">contact us</a></li>
-                                </ul>
+                            <?php   
+                            wp_nav_menu( array(
+                                'theme_location' => 'bottom',
+                                'container' => '',
+                                'menu_class' => 'd-flex justify-content-end'
+                            ) ) ?>
+ 
                             </div>
                         </div>
                     </div>

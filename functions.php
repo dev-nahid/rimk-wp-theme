@@ -29,13 +29,13 @@ function rimktheme_setup() {
 
 	add_theme_support( 'title-tag' );
 
-
 	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'rimkony' ),
+			'primary' => esc_html__( 'Primary Menu', 'rimkony' ),
+			'bottom' => esc_html__( 'Bottom Menu', 'rimkony' )
 		)
 	);
 
@@ -99,19 +99,61 @@ add_action( 'after_setup_theme', 'rimktheme_content_width', 0 );
 
 /**
  * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function rimkony_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'rimkony' ),
-			'id'            => 'sidebar-1',
+			'name'          => esc_html__( 'Sidebar Blog', 'rimkony' ),
+			'id'            => 'sidebar-blog',
 			'description'   => esc_html__( 'Add widgets here.', 'rimkony' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_widget' => '<div id="%1$s" class="single-item wow fadeInUp widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="item-title widget-title">',
+			'after_title'   => '</h4>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Widget Area 1', 'rimkony' ),
+			'id'            => 'footer-widget-area-1',
+			'description'   => esc_html__( 'Add widgets here.', 'rimkony' ),
+			'before_widget' => '<div id="%1$s" class="single-item wow fadeInUp widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="item-title widget-title">',
+			'after_title'   => '</h4>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Widget Area 2', 'rimkony' ),
+			'id'            => 'footer-widget-area-2',
+			'description'   => esc_html__( 'Add widgets here.', 'rimkony' ),
+			'before_widget' => '<div id="%1$s" class="single-item wow fadeInUp widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="item-title widget-title">',
+			'after_title'   => '</h4>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Widget Area 3', 'rimkony' ),
+			'id'            => 'footer-widget-area-3',
+			'description'   => esc_html__( 'Add widgets here.', 'rimkony' ),
+			'before_widget' => '<div id="%1$s" class="single-item wow fadeInUp widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="item-title widget-title">',
+			'after_title'   => '</h4>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Widget Area 4', 'rimkony' ),
+			'id'            => 'footer-widget-area-4',
+			'description'   => esc_html__( 'Add widgets here.', 'rimkony' ),
+			'before_widget' => '<div id="%1$s" class="single-item wow fadeInUp widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="item-title widget-title">',
+			'after_title'   => '</h4>',
 		)
 	);
 }

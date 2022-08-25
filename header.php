@@ -45,20 +45,20 @@
     </header>
     <!-- end header area -->
 
-    <!-- start Search modal area -->
-    <div class="inner-page modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">search here</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="search-area">
-                        <input type="search" placeholder="search..." class="inputs">
-                    </div>
+<!-- start Search modal area -->
+<div class="inner-page modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">search here</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="search-area">
+                    <input type="search" placeholder="search..." class="inputs">
                 </div>
             </div>
         </div>
     </div>
-    <!-- end Search modal area -->
+</div>
+<!-- end Search modal area -->

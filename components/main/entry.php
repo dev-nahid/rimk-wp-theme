@@ -1,11 +1,30 @@
-<div class="col-lg-8 order-0 order-lg-0 home1 blog">
+<?php
+/**
+ * The template for displaying all of entry content.
+ *
+ * @package Rimk
+ */
+// Default Sidebar on right side
+// If sidebar not active
+// If sidebar left
+// If sidebar right
+
+$rightLayout = "right col-lg-8 order-0 order-lg-0 home1 blog";
+$leftLayout = "col-lg-8 order-0 order-lg-0 home1 blog";
+$fullWidthLayout = "col-lg-8 order-0 order-lg-0 home1 blog";
+$fullWidthSmallLayout = "col-lg-8 order-0 order-lg-0 home1 blog";
+
+?>
+<div class='<?php echo $rightLayout; ?>'> <!-- Change layout style using clss  -->
+
 <?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
-    <article>
+
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
         <div class="post-inner">
             <div class="item wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1s">
                 <div class="image">
                     <a href="<?php the_permalink(); ?>">
-                    <?php if ( has_post_thumbnail()) : 
+                    <?php if ( has_post_thumbnail()) :
                         the_post_thumbnail( 'thumbnail' );
                     endif; ?>
                     </a>
@@ -24,5 +43,8 @@
             </div>
         </div>
     </article>
+
 <?php endwhile; endif; ?>
+
+
 </div>

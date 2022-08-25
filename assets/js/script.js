@@ -1,10 +1,10 @@
 /*=================================================================
 
-Template name: Rimk Construction HTML Template
+Template name: Rimk Construction WordPress Theme
 Version: 1.0.0
-Author: Design Expert    
-Author url: 
-Developer: Najmul Huda Eimon 
+Author: Themeony  
+Author url: https://themeony.com
+Developer: Nahid Hasan 
 
 [Table of Content]
 
@@ -252,6 +252,4 @@ jQuery(function($){
     });
     wow.init();
     
-    
-
 });

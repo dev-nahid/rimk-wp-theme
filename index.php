@@ -1,6 +1,8 @@
 <?php
 /**
- * The main template file
+ * The template for displaying archive pages.
+ *
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package Rimk
  */
