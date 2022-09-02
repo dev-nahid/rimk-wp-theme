@@ -11,7 +11,7 @@
 
 <!-- start footer area -->
 <footer data-img="<?php echo RIMKTHEME_LINK  ?>assets/images/footer-bg.jpg">
-<?php get_template_part('components/footer/footer-widgets'); ?>
+<?php get_template_part('components/footer/widgets'); ?>
 
 <?php get_template_part('components/footer/bottom'); ?>
 </footer>

@@ -5,9 +5,9 @@
             <div class="col-lg-12">
                 <div class="menu-bg">
                     <nav class="navbar p-0">
-                    <?php get_template_part('components/header/nav-brand'); ?>
-                    <?php get_template_part('components/header/nav-menu'); ?>
-                    <?php get_template_part('components/header/nav-button'); ?>
+                    <?php get_template_part('components/header/nav/nav-brand'); ?>
+                    <?php get_template_part('components/header/nav/nav-menu'); ?>
+                    <?php get_template_part('components/header/nav/nav-button'); ?>
                     </nav>
                 </div>
             </div>
