@@ -203,5 +203,3 @@ add_action( 'wp_enqueue_scripts', 'rimkony_scripts' );
 
 // Customizer additions.
 //require RIMKTHEME_DIR . 'inc/customizer.php';
-
-
